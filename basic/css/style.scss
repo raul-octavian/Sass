@@ -1,0 +1,15 @@
+$important-color: #aa0000;
+$main-color: #333333;
+$background-color: #bbbbbb;
+$large: 1.5rem;
+
+body {
+    background-color: $background-color;
+    margin: 6px;
+}
+
+span {
+    color: $important-color;
+    font-size: $large;
+
+}

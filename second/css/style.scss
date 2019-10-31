@@ -1,0 +1,83 @@
+// Color
+
+$bgColor: #bbbbff;
+$primary: #222222;
+$accent: #ff7430;
+$border: #111164;
+
+$gradient-blue: 344deg, rgba(2,0,36,1) 0%, rgba(100,100,231,1) 55%, rgba(0,212,255,1) 100%;
+$gradient-red: 90deg, rgba(233,163,151,1) 0%, rgba(231,157,100,1) 54%, rgba(210,76,19,1) 100%;
+$gradient-red-to-blue: 168deg, rgba(20,52,231,1) 0%, rgba(231,100,100,1) 54%, rgba(143,0,0,1) 100%;
+@import url('https://fonts.googleapis.com/css?family=Slabo+27px&display=swap');
+
+// Font
+
+$mainFont: 'Slabo 27px', serif;
+$mediumFont: 1.2rem;
+$largeFont: 3rem;
+
+
+
+
+
+
+   body {
+       background-color: $bgColor;
+   }
+
+   nav {
+       height: 80px;
+       width: 70%;
+       margin: 0 auto;
+       
+       color: $primary;
+       ul {           
+           list-style-type: none;
+           display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+        
+       }
+       li {
+           margin: 0 40px;
+       }
+       a {
+           text-decoration: none;
+           font-size: $mediumFont;
+           &:hover {
+               color: $accent;
+
+           }
+
+    
+       }
+   }
+
+   main {
+       display: flex;
+       flex-flow: row nowrap;
+       justify-content: space-around;
+   }
+
+   @mixin boxes($boxH, $boxW, $boxColor, $radius, $boxshadowX, $boxshadowY, $boxshadowColor ) {
+       height: $boxH;
+       width: $boxW;
+       background: linear-gradient($boxColor);
+       background: -moz-linear-gradient($boxColor);
+       background: -webkit-linear-gradient($boxColor);
+       border-radius: $radius;
+       box-shadow: ($boxshadowX $boxshadowY $boxshadowColor);
+       
+   }
+
+   #first {
+       @include boxes(200px, 200px, $gradient-blue, 50%, 1px, 2px,$accent )
+   }
+
+   #second {
+       @include boxes(200px, 200px, $gradient-red, 50%, 4px, 2px, $border )
+   }
+
+   #third {
+       @include boxes(200px, 200px, $gradient-red-to-blue, 20px, 5px, 2px, $primary )
+   }

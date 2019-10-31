@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css?family=Slabo+27px&display=swap");
+body {
+  background-color: #bbbbff;
+}
+
+nav {
+  height: 80px;
+  width: 70%;
+  margin: 0 auto;
+  color: #222222;
+}
+nav ul {
+  list-style-type: none;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+}
+nav li {
+  margin: 0 40px;
+}
+nav a {
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+nav a:hover {
+  color: #ff7430;
+}
+
+main {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+}
+
+#first {
+  height: 200px;
+  width: 200px;
+  background: linear-gradient(344deg, #020024 0%, #6464e7 55%, #00d4ff 100%);
+  background: -moz-linear-gradient(344deg, #020024 0%, #6464e7 55%, #00d4ff 100%);
+  background: -webkit-linear-gradient(344deg, #020024 0%, #6464e7 55%, #00d4ff 100%);
+  border-radius: 50%;
+  box-shadow: 1px 2px #ff7430;
+}
+
+#second {
+  height: 200px;
+  width: 200px;
+  background: linear-gradient(90deg, #e9a397 0%, #e79d64 54%, #d24c13 100%);
+  background: -moz-linear-gradient(90deg, #e9a397 0%, #e79d64 54%, #d24c13 100%);
+  background: -webkit-linear-gradient(90deg, #e9a397 0%, #e79d64 54%, #d24c13 100%);
+  border-radius: 50%;
+  box-shadow: 4px 2px #111164;
+}
+
+#third {
+  height: 200px;
+  width: 200px;
+  background: linear-gradient(168deg, #1434e7 0%, #e76464 54%, #8f0000 100%);
+  background: -moz-linear-gradient(168deg, #1434e7 0%, #e76464 54%, #8f0000 100%);
+  background: -webkit-linear-gradient(168deg, #1434e7 0%, #e76464 54%, #8f0000 100%);
+  border-radius: 20px;
+  box-shadow: 5px 2px #222222;
+}
+
+/*# sourceMappingURL=style.css.map */

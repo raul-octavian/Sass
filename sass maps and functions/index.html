@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Scss exaples</title>
+</head>
+<body>
+    <div id="fixed">
+        <ul id="nav">
+            <li><a href="#sass-comand">Comand  |</a></li>
+            <li><a href="#scss-map">Scss-Map  |</a></li>
+            <li><a href="#functions">Functions  |</a></li>
+            <li><a href="#loops">Loops |</a></li>
+            <li><a href="#if">Ifs  |</a></li>
+        </ul>
+    </div>
+
+    <main>
+        <div>
+            <h1 id="sass-comand">Sass comand lines</h1>
+            <h3><span>ls</span> shows te content of the directory</h3>
+            <h3><span>cd ..</span> navigates up one directory</h3>
+            <h3><span>cd filename</span> navigates to file name</h3>
+            <h3><span>sass --watch filename.scss:filename.scc</span> tells the system to use the <span>sass</span> language to watch <span>--watch</span> for changes in <span>filename.scss</span> and translate them as CSS code in<span> filename.css</span> </h3>
+            <h3>make sure to link the css file in your html file</h3>
+        </div>
+        <div>
+            <H1 id="scss-map">SCSS-MAP</H1>
+        <pre>
+            <span class="key-words">$color:</span> <span class="key-words">(</span>
+                primary:(
+                    base: #995522,
+                    dark: darken(#995522, 30%),
+                    light: lighten(#995522, 30%)
+                ),
+            
+                secondary: (
+                    base: #bc2290,
+                    dark: darken(#bc2290, 20%),
+                    light: lighten(#bc2290, 20%)
+                )
+
+            </pre>
+            <span class="key-words">)</span>;
+
+            <h3> The<span> $color: () </span> creates the map, key element here are the "<span>() </span>", </br> inside we have two more maps (notice the lack of "$" key sign beacouse they are inside the variable), <br> inside we have the elements that we call upon, only one of the per call, <br> they are all different variations of the same color( it can be any any other CSS parameter, height, display..)</h3>
+            
+            <h2>Calling a map in scss</h2>
+
+            <pre>
+                span {
+                color: <span>map-get(map-get</span>($map:<span>$color</span> , $key: <span>primary</span>), <span>base</span>)
+                }
+            </pre>
+
+            <h3>When we call the map: <br>
+            <blockquote> we start like any css call, "identifier + { + parameter + value", <br>
+            The value will contain the call for the map:<br>
+            <blockquote>
+                <span>map-get(map-get($mapname, socondary map), keyname</span> <br>because we have 2 maps nested we need to declare the map-get declaration twice, so the system knows to look two layers deep(for 3 you use 3, for one, one). <br> 
+                In the declaration inside "()" we declare the name of the map to look into "<span>$map: $name</span> or <span>$name</span>"(both are ok), <br> next we declare the second map, or key if there is no second map "<span>mapName/key</span> or <span>$key: "mapName"/key</span>", <br> and lastly the key or the atribute value witch will be loaded "<span>base, dark or light(in our case)</span>" <br>
+                (depending on how many nested maps there are this elements will be the second, or tenth but allways last). <br> Every map-get will need a set of (), and the key is right after the last one</blockquote>
+            </blockquote></h3>
+        
+        </div>   
+
+        <div>
+
+            <h1  id="functions">Writing and calling a funtion to simplify the calling process</h1>
+
+            <pre>
+                <span class="key-words">@function</span> colorz (<span class="variable">$color-name, $color-variant</span>) {
+                    <span calss="key-words"> @return</span> map-get(map-get( $color, <span class="variable">$color-name),$color-variant</span>);   
+                }
+            </pre>
+
+            <h3>
+                <span>@function colorz</span> will create a function with the name colorz,<br> in the () that follow we enter the parameters that we need to imput as variables<blockquote>This patametes will store imputed data for the span of the function</blockquote><br>
+                <span>@return</span> will tell the system the functions action, "to return the text that follows"<br>
+                we contiune with the Scss declaration for loading the map as a value:<blockquote>"<span>get-map(get-map($color, $color-name), $color-variant) </span> "</blockquote> notice that the atribute names from the function declatation repeat themselvs.<br> it means that whatever value is writtem instead of those two variables it will be past down in the body of the funtion as values( one equals another) 
+
+                Must be put at the top og the page.
+            </h3>
+
+            <pre>
+                .key-words {
+                color: <span class="key-words">colorz</span>(<span class="variable">secondary, dark </span>)
+                }
+            </pre>
+                
+            <h3>
+                value of the css atribute color is equal to the function <span>coloz</span> and the atributes past to it are in the bracket "<span class=variable">secondary, dark</span><br> as a rezult the value will be:<br><blockquote>
+                "color: <span>map-get(map-get( $color,</span> <span class="variable">secondary), dark</span>)"</blockquote>
+
+            </h3><ul class="list-group">
+                <li class="list-group-item active">Text</li>
+                <li class="list-group-item disabled" aria-disabled="true">Disabled item</li>
+            </ul>
+
+        </div>
+
+    </main>
+</body>
+</html>
