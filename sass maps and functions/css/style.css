@@ -37,8 +37,12 @@ main {
   color: #22b462;
 }
 
+h1 {
+  padding: 50px 0 0 0;
+}
+
 .key-words {
-  color: black;
+  color: #0e4928;
 }
 
 .function {
@@ -51,6 +55,22 @@ main {
 
 span {
   color: #673917;
+}
+
+h3 {
+  font-size: 1rem;
+}
+
+pre {
+  font-size: 1.5rem;
+}
+
+a {
+  font-size: 1.2rem;
+}
+
+span {
+  font-size: 1.4rem;
 }
 
 /*# sourceMappingURL=style.css.map */

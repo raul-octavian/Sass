@@ -95,12 +95,40 @@
                 value of the css atribute color is equal to the function <span>coloz</span> and the atributes past to it are in the bracket "<span class=variable">secondary, dark</span><br> as a rezult the value will be:<br><blockquote>
                 "color: <span>map-get(map-get( $color,</span> <span class="variable">secondary), dark</span>)"</blockquote>
 
-            </h3><ul class="list-group">
-                <li class="list-group-item active">Text</li>
-                <li class="list-group-item disabled" aria-disabled="true">Disabled item</li>
-            </ul>
+            </h3>
+        </div>
+
+        <div id="loops">
+            <h1>Seting and using loops</h1>
+
+            <h3>start by declaring a map:
+                <blockquote>
+                    <pre><span>$Hsize:</span> (
+            <span class="key-words">h3</span>:<span class="variable">1rem,</span>
+            <span class="key-words">pre</span>:<span class="variable">1.5rem,</span>
+            <span class="key-words">a</span>:<span class="variable">1.2rem,</span>
+            <span class="key-words">span</span>:<span class="variable">1.4rem</span>
+                                );</pre></blockquote>
+            </h3>
+            <h3>
+                The comand above crate a map with 4 elements inside,
+            </h3>
+            <h3>Calling a @each</h3>
+            <h3>this will loop throuht the map and create de comand that we want:
+                <blockquote><pre>
+                    <spam class="function">@each</spam> <spam class="key-words">$item</spam>, <span class="variable">$size</span>  in <span>$Hsize</span> {
+                        <spam class="key-words">#{$item}</spam> {
+                            font-size: <span class="variable">$size </span>;
+                        }
+                    }
+                </pre></blockquote>
+            </h3>
+            <h3>what we tell the system to do is to look in <span>$Hsize</span> (key word " <span>in</span> " for all the the <span class="key-words">$items</span>( key comand "<span>#</span>") and,<br> create for each of them a css comand that states that the font-size must be equal to <span class="variable">$size</span> </h3>
 
         </div>
+       <div id="if">
+
+       </div>
 
     </main>
 </body>
