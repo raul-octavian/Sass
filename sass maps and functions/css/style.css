@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+}
+
+main {
+  margin: 10px 0 0 0;
+  padding: 50px;
+}
+
+#fixed {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  background-color: #bbbbbb;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+}
+#fixed ul {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  list-style-type: none;
+}
+#fixed ul li {
+  margin: 0 0 0 30px;
+}
+#fixed ul li a {
+  text-decoration: none;
+  color: #16743f;
+}
+#fixed ul li a:hover {
+  color: #22b462;
+}
+
+.key-words {
+  color: black;
+}
+
+.function {
+  color: #d7864a;
+}
+
+.variable {
+  color: #22b462;
+}
+
+span {
+  color: #673917;
+}
+
+/*# sourceMappingURL=style.css.map */

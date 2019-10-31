@@ -1,0 +1,87 @@
+
+
+@function colorz ($color-name, $color-variant) {
+    @return map-get(map-get( $color, $color-name),$color-variant);   
+}
+
+
+$color: (
+    primary: (
+        base: #ff0022,
+        dark: darken(#995522, 12%),
+        light: lighten(#995522, 20%)
+    ),
+
+    secondary: (
+        base: #16743f,
+        dark: darken(#16743f, 30%),
+        light: lighten(#16743f, 15%)
+    )
+);
+
+body {
+    margin: 0;
+}
+main {
+    margin: 10px 0 0 0;
+    padding: 50px;
+}
+
+#fixed {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    background-color: #bbbbbb;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+     
+    ul{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        list-style-type: none;
+
+        li {
+            margin: 0 0 0 30px;
+
+            a {
+                text-decoration: none;
+                color: colorz(secondary, base);
+
+                &:hover {
+                    color: colorz(secondary, light);
+
+                }
+            }
+        }
+
+    }
+    
+
+}
+
+
+
+
+.key-words {
+    color: colorz(secondary, dark )
+                }
+.function {
+    color: colorz(primary, light )
+                }
+.variable {
+    color: colorz(secondary, light )
+                }
+
+span {
+    color: map-get(map-get($map:$color , $key:primary ), dark)
+}
+
+
+
+
